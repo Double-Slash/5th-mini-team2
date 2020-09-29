@@ -1,18 +1,26 @@
 import React from 'react';
+import QuestionInfo from '@/components/QuestionInfo';
+import CurrentRemainQuestion from '@/components/CurrentRemainQuestion';
+import QuestionImg from '@/components/QuestionImg';
 
 const Solve = () => {
   return (
     <div className="wrapper">
-      <div className="question-info col"></div>
+      <div className="question-info col">
+        <QuestionInfo />
+      </div>
       <div className="container">
         <div className="row">
-          <div className="col-9 current-remain-question-wrapper">
-            <span className="current-remain-question">현재 12문제 | 남은 8문제</span>
-          </div>
+          <span className="col-7" />
+          <span className="col-2 current-remain-question">
+            <CurrentRemainQuestion />
+          </span>
         </div>
 
         <div className="row">
-          <div className="col-9 question-img"></div>
+          <div className="col-9 question-img">
+            <QuestionImg />
+          </div>
           <div className="col omr"></div>
         </div>
 
@@ -30,26 +38,34 @@ const Solve = () => {
       <style jsx>
         {`
           .question-info {
-            height: 50px;
-            background-color: skyblue;
-          }
-          .current-remain-question-wrapper {
-            text-align: right;
+            width: 1920px;
+            height: 90px;
+            background-color: #b0d5e5;
+            padding: 20px 10px;
           }
           .current-remain-question {
-            height: 30px;
-            background-color: yellow;
+            margin: 40px 0px 10px 0px;
+            padding: 10px 10px 10px 10px;
+
+            width: 214px;
+            height: 46px;
+            border-radius: 1px;
+            background-color: #b0d5e5;
           }
           .question-img {
-            height: 500px;
-            width: 100%;
-            background-color: gray;
+            margin: 0px 20px 30px 20px;
+            width: 1170px;
+            height: 604px;
+            border: solid 1px #707070;
+            background-color: #f2f2f2;
           }
           .omr {
-            height: 500px;
-            width: 100%;
-            background-color: darkslateblue;
+            margin: 0px 0px 20px 10px;
+            width: 210px;
+            height: 604px;
+            border: solid 1px #707070;
           }
+
           .previous-next-wrapper {
             text-align: center;
           }
