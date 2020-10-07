@@ -1,12 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
-const AnswerItem = ({ answer, onToggle }) => {
-  const { checked, id } = answer;
+const AnswerItem = ({ onToggle, checked, answerIdx }) => {
   return (
-    <div className="answer-listitem">
-      <div className="answer-listitem__circle" onClick={() => onToggle(id)}>
-        {checked ? <i className="fas fa-circle"></i> : <i className="far fa-circle"></i>}
-        <span className="answer-listitem__number">{id}</span>
+    <div className="answer-listitem" onClick={() => onToggle(answerIdx)}>
+      <div>
+        <span className={classNames('dot', checked && 'selected')} />
+        <p>{answerIdx + 1}</p>
       </div>
 
       <style jsx>
@@ -15,16 +16,34 @@ const AnswerItem = ({ answer, onToggle }) => {
             padding-bottom: 18px;
             cursor: pointer;
           }
-          .answer-listitem__circle {
-            font-size: 16px;
+          .answer-listitem > div {
+            display: flex;
+            align-items: center;
           }
-          .answer-listitem__number {
-            padding-left: 10px;
+          .answer-listitem p {
+            margin: 0 8px;
+            color: #707070;
+          }
+          .dot {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            display: inline-block;
+            border: solid 2px #707070;
+          }
+          .selected {
+            background-color: #707070;
           }
         `}
       </style>
     </div>
   );
+};
+
+AnswerItem.propTypes = {
+  answer: PropTypes.object,
+  onToggle: PropTypes.func,
+  checked: PropTypes.bool,
 };
 
 export default AnswerItem;

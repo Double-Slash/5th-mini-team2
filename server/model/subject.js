@@ -15,6 +15,7 @@ const subjectCreate = (S_NM) => {  // 과목 추가
       const subCreSql = `INSERT INTO ds2team.Subject (S_PK, S_NM) VALUES (?, ?);`;
       await promisePool.execute(subCreSql, [S_PK, RE_S_SM]);
       resolve({ 'subjectPK': S_PK, 'subjectName': RE_S_SM });
+
     } catch (err) {
       reject(err);
     }
@@ -25,6 +26,7 @@ const subjectList = (S_NM) => {  // 과목 추가
   return new Promise(async (resolve, reject) => {
     try {
       const subjectSql = `SELECT S_PK AS subjectPK, S_NM AS subjectName FROM ds2team.Subject`;
+
       const [subjects, subjectsFields] = await promisePool.execute(subjectSql);
       resolve(subjects);
     } catch (err) {

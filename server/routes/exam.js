@@ -10,6 +10,7 @@ router.post('/create', async (req, res, next) => {
   try {
     if (is.empty(examName) || is.empty(startTime) || is.empty(limitTime)) throw new Error('필수 파라미터가 없습니다.');
     res.status(200).json(await examMd.create(subjectPK, examName, startTime, limitTime, regUserPK));
+
   } catch (err) {
     res.status(404).json({ 'status': 'error', 'msg': err.message });
   }

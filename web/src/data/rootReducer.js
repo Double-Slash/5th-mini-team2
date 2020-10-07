@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
-import temp from './Temp/reducers';
+import questionReducer from './questions/reducers';
+import examReducer from './exam/reducers';
 
-export default combineReducers({ temp });
+export default combineReducers({ questions: questionReducer, exam: examReducer });

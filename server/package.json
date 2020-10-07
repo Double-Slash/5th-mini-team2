@@ -1,6 +1,7 @@
 {
   "name": "ds-2team-api",
   "version": "0.0.5",
+
   "private": true,
   "scripts": {
     "start": "nodemon ./app"

@@ -8,6 +8,7 @@ router.post('/create', async (req, res, next) => {
   try {
     if (is.empty(subjectName)) throw new Error('필수 파라미터가 없습니다.');
     res.status(200).json(await subjectMd.subjectCreate(subjectName));
+
   } catch (err) {
     res.status(404).json({ 'status': 'error', 'msg': err.message });
   }
