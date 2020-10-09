@@ -4,12 +4,6 @@ export const addQuestion = () => ({
   type: ActionTypes.ADD_QUESTION,
 });
 
-export const addAnswer = (idx, value) => ({
-  type: ActionTypes.ADD_ANSWER,
-  idx,
-  value,
-});
-
 export const changeQuestionType = (idx, checked) => ({
   type: ActionTypes.CHANGE_TYPE,
   idx,
@@ -27,3 +21,9 @@ export const removeQuestion = (idx) => ({
   type: ActionTypes.REMOVE_QUESTION,
   idx,
 });
+
+export const addImage = (file, idx) => ({
+  type: ActionTypes.ADD_IMAGE_QUESTION,
+  file,
+  idx, 
+})

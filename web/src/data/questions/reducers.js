@@ -27,11 +27,6 @@ const questions = (state = initState, action = {}) => {
     case ActionTypes.ADD_QUESTION:
       return update(state, { $push: [getNewQuestion()] });
 
-    case ActionTypes.ADD_ANSWER:
-      return update(state, {
-        [action.idx]: { numChoices: { $set: action.value } },
-      });
-
     case ActionTypes.CHANGE_TYPE:
       return update(state, {
         [action.idx]: { type: { $set: action.checked } },
@@ -55,6 +50,13 @@ const questions = (state = initState, action = {}) => {
 
     case ActionTypes.REMOVE_QUESTION:
       return update(state, { $splice: [[action.idx, 1]] });
+
+    case ActionTypes.ADD_IMAGE_QUESTION:
+      return update(state, {
+        [action.idx]: {
+          image: { $set: action.file },
+        },
+      });
 
     default:
       return state;
