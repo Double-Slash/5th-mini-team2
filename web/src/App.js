@@ -5,6 +5,7 @@ import Create from '@/pages/Create';
 import Solve from '@/pages/Solve';
 import Login from '@/pages/Login';
 import Welcome from '@/pages/Welcome';
+import Result from './pages/Result';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/login" component={Login} />
         <Route path="/welcome" component={Welcome} />
         <Route path="/solve/:id" component={Solve} />
+        <Route path="/result/:id" component={Result} />
       </Switch>
 
       <style jsx global>{`
