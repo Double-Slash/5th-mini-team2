@@ -65,6 +65,7 @@ const Result = ({ exam: { info } }) => {
           display: flex;
           justify-content: flex-start;
           padding: 0;
+          margin-bottom: 15px;
         }
         .result-info-wrapper {
           display: flex;

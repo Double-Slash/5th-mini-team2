@@ -27,6 +27,26 @@ const Table = ({ columns, data }) => {
           })}
         </tbody>
       </table>
+      <style jsx global>
+        {`
+          .table-number > table {
+            text-align: center;
+          }
+          table {
+            border-spacing: 0;
+            border: 1px solid black;
+          }
+
+          th,
+          td {
+            margin: 0;
+            padding: 0.3rem 2rem;
+
+            border-bottom: 1px solid black;
+            border-right: 1px solid black;
+          }
+        `}
+      </style>
     </div>
   );
 };
